@@ -5,7 +5,7 @@ FROM node:18.16
 RUN apt update -y && npm install 
 
 # COPY FILE TO NAME
-ADD . /app
+ADD . /apps
 
 # MAINTANER IMAGE
 LABEL email="kunhadji@outlook.com"
