@@ -1,11 +1,20 @@
 # MENENTUKAN IMAGE
 FROM node:18.16
 
+# WORK DIRECTORY
+WORKDIR /app
+
 # PERINTAH YANG DIJALANKAN
-RUN apt update -y && npm install 
+RUN apt update -y
 
 # COPY FILE TO NAME
-ADD . /apps
+ADD . /app
+
+# COPY PACKAGE JSON
+COPY package*.json ./
+
+# INSTALL NPMS
+RUN npm install
 
 # MAINTANER IMAGE
 LABEL email="kunhadji@outlook.com"
